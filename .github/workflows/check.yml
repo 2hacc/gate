@@ -6,9 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: gate-check
@@ -38,36 +36,18 @@ jobs:
           CHECK_CONCURRENCY: "16"
           CHECK_TIMEOUT: "90"
 
-      - name: Ensure GitHub Pages is enabled (one-time auto setup)
+      - name: Commit results into repo (raw.githubusercontent 直读, 不依赖 Pages)
         run: |
-          code=$(curl -s -o /dev/null -w '%{http_code}' \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/pages")
-          echo "Pages API status: $code"
-          if [ "$code" = "404" ]; then
-            echo "首次运行: 启用 GitHub Pages (source = GitHub Actions, 目录 /public)"
-            curl -sS -X PUT \
-              -H "Authorization: Bearer $GITHUB_TOKEN" \
-              -H "Content-Type: application/json" \
-              -d '{"build_type":"workflow","source":{"branches":["main"],"path":"/public"}}' \
-              "https://api.github.com/repos/$GITHUB_REPOSITORY/pages"
-            echo
-            sleep 10
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f public
+          if git diff --cached --quiet; then
+            echo "结果无变化, 跳过提交"
+          else
+            git commit -m "chore: refresh node results $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull --rebase origin "$GITHUB_REF_NAME" || true
+            git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'public'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Show site URL
-        run: 'echo "site: https://仓库用户名.github.io/gate/ (deploy outcome: ${{ steps.deployment.outcome }})"'
+      - name: Show result URL
+        run: 'echo "nodes.txt: https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_REF_NAME/public/nodes.txt"'
