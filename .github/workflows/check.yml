@@ -38,6 +38,8 @@ jobs:
           CHECK_TIMEOUT: "90"
           # 只保留这些国家的节点 (ISO 两位码, 逗号分隔; 留空 = 全部保留)
           ALLOW_COUNTRIES: "JP,US"
+          # 只要住宅节点, 丢弃机房 (1 = 开启; 留空 = 住宅+机房都要)
+          ALLOW_RESIDENTIAL: "1"
 
       - name: Commit results into repo (raw.githubusercontent 直读, 不依赖 Pages)
         run: |

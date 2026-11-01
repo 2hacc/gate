@@ -48,6 +48,8 @@ MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))
 HTTP_TIMEOUT = int(os.environ.get("HTTP_TIMEOUT", "60"))
 # 国家白名单 (ISO 两位码, 逗号分隔; 留空 = 不过滤全部保留)
 ALLOW_COUNTRIES = {c.strip().upper() for c in os.environ.get("ALLOW_COUNTRIES", "").split(",") if c.strip()}
+# 只保留住宅节点 (1/true/yes = 只留住宅; 留空 = 住宅+机房都要)
+ALLOW_RESIDENTIAL = os.environ.get("ALLOW_RESIDENTIAL", "").strip().lower() in ("1", "true", "yes")
 PUBLIC_DIR = os.environ.get("PUBLIC_DIR", os.path.join(REPO_DIR, "public"))
 TEMPLATE_HTML = os.path.join(REPO_DIR, "web", "index.html")
 
@@ -385,6 +387,8 @@ def check_all(nodes, session):
 # ---------------------------------------------------------------------------
 def build_outputs(results, raw_count, sstp_count, source):
     available = [r for r in results if r.get("success")]
+    if ALLOW_RESIDENTIAL:
+        available = [r for r in available if r.get("residential") == "residential"]
     countries = {}
     for n in available:
         c = n["country"] or "未知"
