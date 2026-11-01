@@ -350,6 +350,10 @@ def check_one(node, session):
         out["latency_ms"] = j.get("responseTime")
         out["colo"] = j.get("colo")
         out["error"] = (None if ok else (j.get("error") or j.get("message") or "check failed"))
+        # TCP Loop detected = Cloudflare 侧对 Worker 出口连接的拦截, 不是节点本身不可用,
+        # 计入 Worker 异常让全失败保护生效, 避免把误杀结果当成真实检测结果发布
+        if not ok and out["error"] and "tcp loop" in str(out["error"]).lower():
+            out["worker_error"] = True
         exit_info = j.get("exit") or {}
         if exit_info:
             asn = exit_info.get("asn") or {}
@@ -510,6 +514,8 @@ def main():
 
     if uniq and not success and len(worker_errors) == len(uniq):
         die("Worker 全部请求异常, 检测服务不可用 — 本次运行判定失败 (不生成空结果)")
+    if uniq and not success:
+        die("检测成功数为 0 — 无论是 Worker 故障还是节点全挂, 都不应覆盖已有的可用清单 (不生成空结果)")
 
     data = build_outputs(results, raw_count, sstp_count, source)
     log("RESULT", f"可用节点: {len(success)}")
