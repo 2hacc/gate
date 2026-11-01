@@ -2,7 +2,8 @@ name: VPN Gate Node Check
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    # 每天一次: 20:00 UTC = 北京时间 04:00
+    - cron: "0 20 * * *"
   workflow_dispatch:
 
 permissions:
@@ -35,6 +36,8 @@ jobs:
           CHECK_WORKER: ${{ secrets.DOMAIN || 'https://checksocks5.qxlsyzf.workers.dev/check?sstp=vpn:vpn@' }}
           CHECK_CONCURRENCY: "16"
           CHECK_TIMEOUT: "90"
+          # 只保留这些国家的节点 (ISO 两位码, 逗号分隔; 留空 = 全部保留)
+          ALLOW_COUNTRIES: "JP,US"
 
       - name: Commit results into repo (raw.githubusercontent 直读, 不依赖 Pages)
         run: |

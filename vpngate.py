@@ -46,6 +46,8 @@ CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))
 HTTP_TIMEOUT = int(os.environ.get("HTTP_TIMEOUT", "60"))
+# 国家白名单 (ISO 两位码, 逗号分隔; 留空 = 不过滤全部保留)
+ALLOW_COUNTRIES = {c.strip().upper() for c in os.environ.get("ALLOW_COUNTRIES", "").split(",") if c.strip()}
 PUBLIC_DIR = os.environ.get("PUBLIC_DIR", os.path.join(REPO_DIR, "public"))
 TEMPLATE_HTML = os.path.join(REPO_DIR, "web", "index.html")
 
@@ -292,6 +294,7 @@ def to_sstp_nodes(rows):
         if not m: continue
         port = int(m.group(1))
         if not (1 <= port <= 65535): continue
+        if ALLOW_COUNTRIES and (r["country_short"] or "").upper() not in ALLOW_COUNTRIES: continue
         host = r["host"]
         if not host.endswith(".opengw.net"):
             host = f"{host}.opengw.net"
