@@ -1,16 +1,16 @@
 # 住宅IP 本地筛选报告
 
-- 生成: `2026-11-18 13:01:21 UTC`
-- 数据源: VPN Gate `188` 台
+- 生成: `2026-11-18 16:01:32 UTC`
+- 数据源: VPN Gate `190` 台
 - **检测发起地: 用户自己家（黑龙江电信 / iStoreOS 青龙容器）**
 
 | 阶段 | 数量 |
 |---|---|
-| 本轮多批抽样并集 | 188 |
-| 有SSTP入口 + 国家白名单 | 77 |
-| 阶段A 本地TCP打得开 | 76 |
-| 阶段B 判定为住宅且国家相符 | 44 |
-| **跨轮台账中的住宅(总池)** | **163** |
+| 本轮多批抽样并集 | 190 |
+| 有SSTP入口 + 国家白名单 | 88 |
+| 阶段A 本地TCP打得开 | 88 |
+| 阶段B 判定为住宅且国家相符 | 57 |
+| **跨轮台账中的住宅(总池)** | **213** |
 | 阶段C 你家实测连通 | 15 |
 | **最终写入清单** | **45** |
 
@@ -18,34 +18,35 @@
 
 | 编号 | 目标机器 | 出口IP | 运营商 | 你家实测 | 抽查 |
 |---|---|---|---|---|---|
-| 本地-日本-住宅-24 | `vpn635273976.opengw.net:1677` | 61.21.129.143 | JCOM Co., Ltd. | 733ms | - |
-| 本地-日本-住宅-13 | `vpn774927062.opengw.net:1776` | 118.105.225.45 | Chubu Telecommunications C | 1479ms | - |
-| 本地-日本-住宅-16 | `vpn221487938.opengw.net:1209` | 126.81.234.189 | SoftBank Corp. | 1707ms | - |
-| 本地-日本-住宅-30 | `vpn152852888.opengw.net:1613` | 153.205.149.91 | NTT Communications Corpora | 2114ms | - |
-| 本地-日本-住宅-12 | `vpn865744309.opengw.net:1418` | 111.99.110.28 | Kddi Corporation | 2161ms | - |
-| 本地-日本-住宅-11 | `vpn184169581.opengw.net:1713` | 61.46.101.187 | JCOM | 2862ms | - |
-| 本地-日本-住宅-05 | `vpn152857105.opengw.net:1924` | 222.6.221.181 | Kddi Corporation | 2990ms | - |
-| 本地-日本-住宅-18 | `vpn808136125.opengw.net:1772` | 118.153.226.74 | Kddi Corporation | 3382ms | - |
-| 本地-日本-住宅-04 | `vpn953960224.opengw.net:1223` | 106.173.94.75 | Kddi Corporation | 3803ms | - |
-| 本地-日本-住宅-06 | `vpn720772320.opengw.net:1269` | 180.15.3.112 | NTT Communications Corpora | 3817ms | - |
-| 本地-日本-住宅-01 | `vpn480.opengw.net:5555` | 110.163.140.56 | NTT DOCOMO, INC. | 3869ms | - |
-| 本地-日本-住宅-17 | `vpn785696764.opengw.net:1465` | 122.133.148.226 | NEC BIGLOBE Ltd. | 4048ms | - |
-| 本地-日本-住宅-03 | `vpn681398325.opengw.net:1256` | 126.208.100.178 | SoftBank Corp. | 4199ms | - |
-| 本地-日本-住宅-09 | `vpn390088297.opengw.net:995` | 220.221.113.238 | NTT COMMUNICATIONS CORPORA | 7710ms | - |
-| 本地-日本-住宅-02 | `laud.opengw.net:443` | 115.179.206.241 | ARTERIA Networks Corporati | 8639ms | - |
-| 本地-日本-住宅-10 | `vpn576080304.opengw.net:1901` | 126.145.125.132 | SoftBank Corp. | 不通 | - |
+| 本地-日本-住宅-17 | `vpn785696764.opengw.net:1465` | 122.133.148.226 | NEC BIGLOBE Ltd. | 1201ms | - |
+| 本地-日本-住宅-02 | `laud.opengw.net:443` | 115.179.206.241 | ARTERIA Networks Corporati | 1361ms | - |
+| 本地-日本-住宅-30 | `vpn152852888.opengw.net:1613` | 153.205.149.91 | NTT Communications Corpora | 1548ms | - |
+| 本地-日本-住宅-12 | `vpn865744309.opengw.net:1418` | 111.99.110.28 | Kddi Corporation | 1646ms | - |
+| 本地-日本-住宅-11 | `vpn184169581.opengw.net:1713` | 61.46.101.187 | JCOM | 1866ms | - |
+| 本地-日本-住宅-24 | `vpn635273976.opengw.net:1677` | 61.21.129.143 | JCOM Co., Ltd. | 1972ms | - |
+| 本地-日本-住宅-18 | `vpn808136125.opengw.net:1772` | 118.153.226.74 | Kddi Corporation | 2443ms | - |
+| 本地-日本-住宅-04 | `vpn953960224.opengw.net:1223` | 106.173.94.75 | Kddi Corporation | 3625ms | - |
+| 本地-日本-住宅-13 | `vpn774927062.opengw.net:1776` | 118.105.225.45 | Chubu Telecommunications C | 3636ms | - |
+| 本地-日本-住宅-09 | `vpn390088297.opengw.net:995` | 220.221.113.238 | NTT COMMUNICATIONS CORPORA | 3792ms | - |
+| 本地-日本-住宅-05 | `vpn152857105.opengw.net:1924` | 222.6.221.181 | Kddi Corporation | 4067ms | - |
+| 本地-日本-住宅-14 | `vpn630461743.opengw.net:1378` | 223.133.135.144 | Sony Network Communication | 4087ms | - |
+| 本地-日本-住宅-03 | `vpn681398325.opengw.net:1256` | 126.208.100.178 | SoftBank Corp. | 4434ms | - |
+| 本地-日本-住宅-06 | `vpn720772320.opengw.net:1269` | 180.15.3.112 | NTT Communications Corpora | 4897ms | - |
+| 本地-日本-住宅-01 | `vpn480.opengw.net:5555` | 110.163.140.56 | NTT DOCOMO, INC. | 8865ms | - |
 | 本地-日本-住宅-26 | `vpn501671840.opengw.net:1285` | 119.83.242.105 | TOKAI Communications Corpo | 不通 | - |
 | 本地-日本-住宅-31 | `vpn187938957.opengw.net:1362` | 120.75.57.120 | Sony Network Communication | 不通 | - |
 | 本地-日本-住宅-34 | `vpn736504438.opengw.net:1834` | 126.103.157.140 | SoftBank Corp. | 不通 | - |
 | 本地-日本-住宅-35 | `vpn624472654.opengw.net:1588` | 220.147.184.189 | ARTERIA Networks Corporati | 不通 | - |
 | 本地-日本-住宅-37 | `vpn220480694.opengw.net:1900` | 60.119.0.51 | SoftBank Corp. | 不通 | - |
 | 本地-日本-住宅-39 | `vpn600849538.opengw.net:1258` | 133.209.108.50 | NET-JP-ERX | 不通 | - |
+| 本地-日本-住宅-16 | `vpn221487938.opengw.net:1209` | 126.81.234.189 | SoftBank Corp. | 不通 | - |
 | 本地-日本-住宅-41 | `vpn372144975.opengw.net:1572` | 210.132.182.60 | Japan Network Information  | 不通 | - |
 | 本地-日本-住宅-42 | `vpn173939682.opengw.net:1944` | 118.241.152.20 | Sony Network Communication | 不通 | - |
 | 本地-日本-住宅-45 | `vpn742036804.opengw.net:1665` | 116.12.0.241 | Community Network Center I | 不通 | - |
 | 本地-日本-住宅-46 | `vpn663500256.opengw.net:1965` | 180.196.186.246 | Chubu Telecommunications C | 不通 | - |
 | 本地-日本-住宅-48 | `vpn469796077.opengw.net:1805` | 106.179.239.207 | Kddi Corporation | 不通 | - |
 | 本地-日本-住宅-51 | `vpn120829364.opengw.net:1206` | 126.145.51.121 | SoftBank Corp. | 不通 | - |
+| 本地-日本-住宅-07 | `vpn110639311.opengw.net:1764` | 106.153.16.152 | Kddi Corporation | 不通 | - |
 | 本地-美国-住宅-08 | `vpn801875041.opengw.net:1382` | 74.83.248.218 | Cincinnati Bell Telephone  | 不通 | - |
 | 本地-日本-住宅-27 | `vpn657969707.opengw.net:1622` | 150.31.134.129 | Internet Initiative Japan  | 不通 | - |
 | 本地-日本-住宅-28 | `vpn146183221.opengw.net:1968` | 124.212.251.101 | DION (KDDI CORPORATION) | 不通 | - |
@@ -61,15 +62,14 @@
 | 本地-日本-住宅-49 | `vpn311482781.opengw.net:1493` | 180.199.135.1 | Chubu Telecommunications C | 不通 | - |
 | 本地-日本-住宅-50 | `vpn284945165.opengw.net:1676` | 211.14.226.154 | KATCH Network Inc. | 不通 | - |
 | 本地-日本-住宅-52 | `vpn780850191.opengw.net:1837` | 221.241.238.36 | ARTERIA Networks Corporati | 不通 | - |
-| 本地-日本-住宅-07 | `vpn110639311.opengw.net:1764` | 106.153.16.152 | Kddi Corporation | 未下发 | - |
-| 本地-日本-住宅-14 | `vpn630461743.opengw.net:1378` | 223.133.135.144 | Sony Network Communication | 未下发 | - |
+| 本地-日本-住宅-15 | `vpn390172289.opengw.net:1217` | 131.147.15.145 | Sony Network Communication | 未下发 | - |
 
 ## 出口抽查（防假住宅回落）
 
-跳过（距上次抽查仅 3.0 小时，10 小时后再抽，一天约 2 次）
+跳过（距上次抽查仅 6.0 小时，10 小时后再抽，一天约 2 次）
 
 ## 被剔除的
 
-- 连续3轮实测不通: 2
+- 连续3轮实测不通: 1
 
 _由 gate-local 在本地生成，不经境外机房判断。_
