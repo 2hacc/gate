@@ -1,37 +1,37 @@
 # 住宅IP 本地筛选报告
 
-- 生成: `2026-11-21 19:01:14 UTC`
+- 生成: `2026-11-21 22:01:33 UTC`
 - 数据源: VPN Gate `191` 台
 - **检测发起地: 用户自己家（黑龙江电信 / iStoreOS 青龙容器）**
 
 | 阶段 | 数量 |
 |---|---|
 | 本轮多批抽样并集 | 191 |
-| 有SSTP入口 + 国家白名单 | 77 |
-| 阶段A 本地TCP打得开 | 77 |
-| 阶段B 判定为住宅且国家相符 | 46 |
-| **跨轮台账中的住宅(总池)** | **618** |
-| 阶段C 你家实测连通 | 10 |
+| 有SSTP入口 + 国家白名单 | 87 |
+| 阶段A 本地TCP打得开 | 87 |
+| 阶段B 判定为住宅且国家相符 | 56 |
+| **跨轮台账中的住宅(总池)** | **629** |
+| 阶段C 你家实测连通 | 13 |
 | **最终写入清单** | **45** |
 
 ## 清单内容
 
 | 编号 | 目标机器 | 出口IP | 运营商 | 你家实测 | 抽查 |
 |---|---|---|---|---|---|
-| 本地-日本-住宅-13 | `vpn449287030.opengw.net:995` | 118.19.248.75 | NTT Communications Corpora | 1442ms | - |
-| 本地-日本-住宅-30 | `vpn152852888.opengw.net:1613` | 153.205.149.91 | NTT Communications Corpora | 1496ms | - |
-| 本地-日本-住宅-12 | `vpn865744309.opengw.net:1418` | 111.99.110.28 | Kddi Corporation | 1855ms | - |
-| 本地-日本-住宅-18 | `vpn222286321.opengw.net:1714` | 113.154.137.98 | DION (KDDI CORPORATION) | 2492ms | - |
-| 本地-日本-住宅-11 | `vpn975550277.opengw.net:1514` | 180.198.167.80 | Chubu Telecommunications C | 3168ms | - |
-| 本地-日本-住宅-02 | `vpn898818828.opengw.net:1421` | 106.179.100.57 | Kddi Corporation | 3260ms | - |
-| 本地-日本-住宅-06 | `vpn720772320.opengw.net:1269` | 180.15.3.112 | NTT Communications Corpora | 3379ms | - |
-| 本地-日本-住宅-01 | `vpn480.opengw.net:5555` | 110.163.142.88 | NTT DOCOMO, INC. | 3456ms | - |
-| 本地-日本-住宅-10 | `vpn297008596.opengw.net:1514` | 126.117.177.124 | SoftBank Corp. | 3506ms | - |
-| 本地-日本-住宅-24 | `vpn635273976.opengw.net:1677` | 61.21.129.143 | JCOM Co., Ltd. | 3720ms | - |
-| 本地-日本-住宅-03 | `vpn681398325.opengw.net:1256` | 126.208.100.178 | SoftBank Corp. | 不通 | - |
-| 本地-日本-住宅-17 | `vpn785696764.opengw.net:1465` | 122.133.148.226 | NEC BIGLOBE Ltd. | 不通 | - |
-| 本地-日本-住宅-05 | `vpn152857105.opengw.net:1924` | 222.6.221.181 | Kddi Corporation | 不通 | - |
-| 本地-日本-住宅-16 | `vpn388072280.opengw.net:1336` | 111.96.156.52 | Kddi Corporation | 不通 | - |
+| 本地-日本-住宅-24 | `vpn635273976.opengw.net:1677` | 61.21.129.143 | JCOM Co., Ltd. | 1367ms | OK |
+| 本地-日本-住宅-13 | `vpn449287030.opengw.net:995` | 118.19.248.75 | NTT Communications Corpora | 1379ms | 抽查失败 RemoteDisconnected |
+| 本地-日本-住宅-03 | `vpn681398325.opengw.net:1256` | 126.208.100.178 | SoftBank Corp. | 1389ms | - |
+| 本地-日本-住宅-12 | `vpn865744309.opengw.net:1418` | 111.99.110.28 | Kddi Corporation | 1476ms | - |
+| 本地-日本-住宅-16 | `vpn388072280.opengw.net:1336` | 111.96.156.52 | Kddi Corporation | 1544ms | - |
+| 本地-日本-住宅-30 | `vpn152852888.opengw.net:1613` | 153.205.149.91 | NTT Communications Corpora | 1710ms | - |
+| 本地-日本-住宅-02 | `vpn898818828.opengw.net:1421` | 106.179.100.57 | Kddi Corporation | 1875ms | - |
+| 本地-日本-住宅-18 | `vpn222286321.opengw.net:1714` | 113.154.137.98 | DION (KDDI CORPORATION) | 1925ms | - |
+| 本地-日本-住宅-06 | `vpn720772320.opengw.net:1269` | 180.15.3.112 | NTT Communications Corpora | 1979ms | - |
+| 本地-日本-住宅-10 | `vpn297008596.opengw.net:1514` | 126.117.177.124 | SoftBank Corp. | 2376ms | - |
+| 本地-日本-住宅-09 | `vpn390088297.opengw.net:995` | 223.218.78.152 | NTT Communications Corpora | 2443ms | - |
+| 本地-日本-住宅-11 | `vpn975550277.opengw.net:1514` | 180.198.167.80 | Chubu Telecommunications C | 2609ms | - |
+| 本地-日本-住宅-01 | `vpn480.opengw.net:5555` | 110.163.142.88 | NTT DOCOMO, INC. | 4877ms | - |
+| 本地-日本-住宅-14 | `vpn410164537.opengw.net:1713` | 175.28.145.93 | QTnet, Inc. | 不通 | - |
 | 本地-日本-住宅-26 | `vpn501671840.opengw.net:1285` | 119.83.242.105 | TOKAI Communications Corpo | 不通 | - |
 | 本地-日本-住宅-31 | `vpn187938957.opengw.net:1362` | 120.75.57.120 | Sony Network Communication | 不通 | - |
 | 本地-日本-住宅-34 | `vpn736504438.opengw.net:1834` | 126.103.157.140 | SoftBank Corp. | 不通 | - |
@@ -44,8 +44,6 @@
 | 本地-日本-住宅-46 | `vpn663500256.opengw.net:1965` | 180.196.186.246 | Chubu Telecommunications C | 不通 | - |
 | 本地-日本-住宅-48 | `vpn469796077.opengw.net:1805` | 106.179.239.207 | Kddi Corporation | 不通 | - |
 | 本地-日本-住宅-51 | `vpn120829364.opengw.net:1206` | 126.145.51.121 | SoftBank Corp. | 不通 | - |
-| 本地-日本-住宅-09 | `vpn390088297.opengw.net:995` | 223.218.78.152 | NTT Communications Corpora | 不通 | - |
-| 本地-日本-住宅-14 | `vpn410164537.opengw.net:1713` | 175.28.145.93 | QTnet, Inc. | 不通 | - |
 | 本地-美国-住宅-08 | `vpn801875041.opengw.net:1382` | 74.83.248.218 | Cincinnati Bell Telephone  | 不通 | - |
 | 本地-日本-住宅-27 | `vpn657969707.opengw.net:1622` | 150.31.13.184 | Internet Initiative Japan  | 不通 | - |
 | 本地-日本-住宅-28 | `vpn146183221.opengw.net:1968` | 124.212.251.101 | DION (KDDI CORPORATION) | 不通 | - |
@@ -63,13 +61,15 @@
 | 本地-日本-住宅-52 | `vpn780850191.opengw.net:1837` | 221.241.238.36 | ARTERIA Networks Corporati | 不通 | - |
 | 本地-美国-住宅-15 | `vpn799794865.opengw.net:1919` | 135.180.93.53 | Sonic Telecom LLC | 不通 | - |
 | 本地-美国-住宅-07 | `vpn519731163.opengw.net:1598` | 50.47.103.146 | Wholesail networks LLC | 不通 | - |
+| 本地-日本-住宅-04 | `vpn981288372.opengw.net:1925` | 42.148.153.40 | JCOM Co., Ltd. | 未下发 | - |
+| 本地-日本-住宅-19 | `vpn209596033.opengw.net:1354` | 60.137.122.174 | SoftBank Corp. | 未下发 | - |
 
 ## 出口抽查（防假住宅回落）
 
-跳过（距上次抽查仅 9.0 小时，10 小时后再抽，一天约 2 次）
+本地-日本-住宅-24→OK
 
 ## 被剔除的
 
-- 连续3轮实测不通: 2
+- 连续3轮实测不通: 12
 
 _由 gate-local 在本地生成，不经境外机房判断。_
